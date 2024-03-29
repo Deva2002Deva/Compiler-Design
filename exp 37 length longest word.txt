@@ -1,0 +1,17 @@
+%{
+#include<stdio.h>
+int longest_length=0;
+int current_length=0;
+%}
+%%
+[a-ZA-Z]+ {current_length=yyleng;
+           if(current_length>longest_length)
+           longest_length=current_length;
+           }
+    .|\n;
+    %%
+    int yywrap(){}
+    int main(){
+    printf("ENTER");
+    yylex();
+    }

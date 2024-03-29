@@ -1,0 +1,22 @@
+%{
+%}
+
+%%
+
+[A-Z] {
+  printf("%c is capital letter\n", yytext[0]);
+}
+
+. {
+}
+
+%%
+int yywrap()
+{
+}
+
+int main() {
+printf("Enter the string:");
+  yylex();
+  return 0;
+}
